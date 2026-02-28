@@ -4,7 +4,6 @@ import csv
 import pandas as pd
 import sys
 
-# Add project root so we can import config
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 import config
 
@@ -20,7 +19,6 @@ def _clean_numeric(val):
         return float(s)
     except ValueError:
         return None
-
 
 
 def load_and_clean_sales_detail():
@@ -42,18 +40,15 @@ def load_and_clean_sales_detail():
         for line in f:
             line = line.rstrip("\n\r")
             parts = [p.strip() for p in line.split(",")]
-            # Skip report title and date/page lines
             if not parts or "Page" in line or "From Date" in line or "Sales by customer" in line:
                 continue
             if header_pattern.match(line) or line.startswith("Branch ") or "Branch :" in line:
                 continue
-            # Customer name row: starts with Person_
             if len(parts) >= 1 and re.match(r"^Person_\d+", str(parts[0])):
                 current_customer = parts[0]
                 continue
             if "Total :" in line or (len(parts) >= 2 and str(parts[1]).strip() == "" and "Total" in str(parts[0])):
                 continue
-            # Data row: often first col empty, then qty, description, price
             if current_customer is None:
                 continue
             if len(parts) >= 4:
@@ -64,7 +59,7 @@ def load_and_clean_sales_detail():
                     rows.append({"customer_name": current_customer, "description": desc, "qty": qty_val, "price": price_val})
 
     df = pd.DataFrame(rows)
-    df = df[df["qty"] != 0].copy()  # drop zero-qty lines (cancellations)
+    df = df[df["qty"] != 0].copy()
     df.to_csv(config.CLEANED_SALES_DETAIL_PATH, index=False)
     return df
 
@@ -85,7 +80,6 @@ def load_and_clean_customer_orders():
             if "Customer Name" in line and "Address" in line:
                 continue
             if "Page " in line or "From Date" in line or "Conut -" in line and "," in line and line.count(",") > 3:
-                # Likely title/date line
                 continue
             parts = [p.strip() for p in line.split(",")]
             if len(parts) < 8:
@@ -93,7 +87,6 @@ def load_and_clean_customer_orders():
             first = parts[0]
             if not re.match(r"^Person_\d+", first):
                 continue
-            # Columns: 0=Name, 2=Phone, 3=First Order, 5=Last Order, 7=Total, 8=No. of Orders
             first_order = parts[3] if len(parts) > 3 else ""
             last_order = parts[5] if len(parts) > 5 else ""
             total = _clean_numeric(parts[7]) if len(parts) > 7 else None
@@ -194,14 +187,12 @@ def load_and_clean_attendance():
             try:
                 parts = [p.strip() for p in line.split(",")]
                 if len(parts) >= 5:
-                    # Format: date_in, time_in, date_out, time_out, duration (e.g. 11.58.21 = 11h58m21s)
                     date_in = parts[0]
                     time_in = parts[1]
                     date_out = parts[2]
                     time_out = parts[3]
                     dur_str = parts[4] if len(parts) > 4 else ""
                     if re.match(r"\d{2}-[A-Za-z]{3}-\d{2}", date_in) and dur_str:
-                        # Parse duration H:MM:SS to hours
                         dur_parts = dur_str.replace(".", ":").split(":")
                         try:
                             h = int(dur_parts[0])
@@ -303,7 +294,6 @@ def load_and_clean_avg_sales_menu():
                 })
 
     df = pd.DataFrame(rows)
-    # Infer branch from menu name (e.g. "Conut - Tyre", "Conut Jnah")
     df["branch"] = df["menu_name"].apply(lambda x: x if any(b in str(x) for b in ["Conut", "Main Street"]) else "")
     df["channel"] = df["menu_name"].apply(lambda x: "DELIVERY" if "DELIVERY" in str(x).upper() else "TABLE" if "TABLE" in str(x).upper() else "TAKE AWAY" if "TAKE AWAY" in str(x).upper() else "")
     df.to_csv(config.CLEANED_AVG_SALES_MENU_PATH, index=False)

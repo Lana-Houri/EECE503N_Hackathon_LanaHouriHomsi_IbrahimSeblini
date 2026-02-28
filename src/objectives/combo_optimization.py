@@ -1,10 +1,3 @@
-# =============================================================================
-# [OBJECTIVE 1] COMBO OPTIMIZATION
-# =============================================================================
-# Identify optimal product combinations based on customer purchasing patterns.
-# Uses cleaned sales detail (line items per order) to compute item pairs and
-# recommend combos. Output: combo_recommendations.json for API/OpenClaw.
-# =============================================================================
 
 import os
 import json
@@ -34,13 +27,10 @@ def run_combo_optimization(sales_detail: pd.DataFrame = None):
         else:
             return {"top_pairs": [], "top_combos": [], "message": "No sales detail data."}
 
-    # Build orders: list of product names per customer (we treat each customer row batch as one order)
-    # In our cleaned data each row is (customer_name, description, qty, price). Group by customer.
     orders = sales_detail.groupby("customer_name")["description"].apply(
         lambda x: [_normalize_product(d) for d in x.dropna().unique() if _normalize_product(d)]
     ).to_dict()
 
-    # Co-occurrence: count pairs of products in the same order
     pair_counts = defaultdict(int)
     for products in orders.values():
         products = [p for p in products if p]
@@ -50,11 +40,9 @@ def run_combo_optimization(sales_detail: pd.DataFrame = None):
                 if a != b:
                     pair_counts[(min(a, b), max(a, b))] += 1
 
-    # Sort by count and take top pairs
     sorted_pairs = sorted(pair_counts.items(), key=lambda x: -x[1])[:30]
     top_pairs = [{"item_a": a, "item_b": b, "count": c} for (a, b), c in sorted_pairs]
 
-    # Top combos: for each product, what is most often bought with it?
     combo_suggestions = []
     for (a, b), c in sorted_pairs[:15]:
         combo_suggestions.append({"combo": f"{a} + {b}", "co_occurrence_count": c})

@@ -114,5 +114,5 @@ Data is in **scaled units**; use for patterns, ratios, and relative comparison o
 
 - **Repository**: This repo with the structure above.  
 - **README**: This file (problem, approach, how to run, results).  
-- **Executive brief**: `docs/EXECUTIVE_BRIEF.md` — export to PDF (max 2 pages) for submission; includes problem framing, top findings, recommended actions, expected impact and risks.  
-- **Demo evidence**: Screenshots or short video of OpenClaw invoking the API (e.g. calling `/api/demand_forecast`, `/api/combo_recommendations`, `/api/staffing_recommendation`). Place in `docs/demo/` or link from this README.
+- **Executive brief**: `docs/EXECUTIVE_BRIEF.md` (source); export to PDF (max 2 pages) for submission — see `Executive brief.pdf`. Includes problem framing, top findings, recommended actions, expected impact and risks.  
+- **Demo evidence**: Screenshots of OpenClaw invoking the API (e.g. `/api/demand_forecast`, `/api/combo_recommendations`, `/api/staffing_recommendation`) are in `screenshots/`.

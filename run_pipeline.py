@@ -1,15 +1,11 @@
 import sys
 import os
 
-# Ensure project root is on path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import config
 
-# --- DATA INGESTION & CLEANING ---
 from src.data.ingestion import run_ingestion
-
-# --- OBJECTIVES (modeling/analytics) ---
 from src.objectives.combo_optimization import run_combo_optimization
 from src.objectives.demand_forecasting import run_demand_forecasting
 from src.objectives.expansion_feasibility import run_expansion_feasibility
