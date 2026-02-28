@@ -1,0 +1,55 @@
+{
+  "branch_metrics": [
+    {
+      "branch": "Conut",
+      "total_sales_scaled": 3894865642.86,
+      "avg_monthly_sales_scaled": 778973128.57,
+      "months_of_data": 5
+    },
+    {
+      "branch": "Conut - Tyre",
+      "total_sales_scaled": 5176885755.75,
+      "avg_monthly_sales_scaled": 1035377151.15,
+      "months_of_data": 5
+    },
+    {
+      "branch": "Conut Jnah",
+      "total_sales_scaled": 5689346280.23,
+      "avg_monthly_sales_scaled": 1137869256.05,
+      "months_of_data": 5
+    },
+    {
+      "branch": "Main Street Coffee",
+      "total_sales_scaled": 5312181370.35,
+      "avg_monthly_sales_scaled": 1328045342.59,
+      "months_of_data": 4
+    },
+    {
+      "branch": "Conut,,,,,,,,,",
+      "tax_total_scaled": 427.0
+    },
+    {
+      "branch": "Conut - Tyre,,,,,,,,,",
+      "tax_total_scaled": 563.0
+    },
+    {
+      "branch": "Conut Jnah,,,,,,,,,",
+      "tax_total_scaled": 623.0
+    },
+    {
+      "branch": "Main Street Coffee,,,,,,,,,",
+      "tax_total_scaled": 579.0
+    }
+  ],
+  "recommendation": {
+    "feasibility": "feasible",
+    "reason": "Existing branches show consistent scaled revenue; expansion can replicate success in similar locations.",
+    "candidate_criteria": [
+      "High foot traffic (e.g. malls, main streets)",
+      "Similar demographic to current best-performing branches",
+      "Proximity to delivery zone for cross-channel sales"
+    ],
+    "existing_branch_count": 8,
+    "avg_sales_per_branch_scaled": 2509159881.15
+  }
+}

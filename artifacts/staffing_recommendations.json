@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    {
+      "branch": "Conut - Tyre",
+      "recommended_employees_per_shift": 543.8,
+      "observed_employees_in_data": 16,
+      "total_hours_observed": 4350.5,
+      "note": "Based on historical attendance; scale with demand if needed."
+    }
+  ],
+  "shift_hours_assumed": 8.0
+}

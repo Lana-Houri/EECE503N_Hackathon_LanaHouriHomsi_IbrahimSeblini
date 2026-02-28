@@ -1,0 +1,29 @@
+{
+  "forecasts": [
+    {
+      "branch": "Conut",
+      "forecast_next_period": 852135160.96,
+      "unit": "scaled",
+      "based_on_months": 3
+    },
+    {
+      "branch": "Conut - Tyre",
+      "forecast_next_period": 1418183162.06,
+      "unit": "scaled",
+      "based_on_months": 3
+    },
+    {
+      "branch": "Conut Jnah",
+      "forecast_next_period": 1537256248.55,
+      "unit": "scaled",
+      "based_on_months": 3
+    },
+    {
+      "branch": "Main Street Coffee",
+      "forecast_next_period": 1722112943.33,
+      "unit": "scaled",
+      "based_on_months": 3
+    }
+  ],
+  "note": "Values in scaled units; use for relative comparison."
+}

@@ -1,0 +1,217 @@
+{
+  "top_pairs": [
+    {
+      "item_a": "DELIVERY CHARGE",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 56
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "DELIVERY CHARGE",
+      "count": 51
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 46
+    },
+    {
+      "item_a": "CHIMNEY THE ONE",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 44
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "CHIMNEY THE ONE",
+      "count": 44
+    },
+    {
+      "item_a": "\"  CARAMEL SAUCE",
+      "item_b": "\"  STRAWBERRY",
+      "count": 41
+    },
+    {
+      "item_a": "CHIMNEY THE ONE",
+      "item_b": "DELIVERY CHARGE",
+      "count": 39
+    },
+    {
+      "item_a": "\"  NUTELLA SAUCE",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 38
+    },
+    {
+      "item_a": "\"  CARAMEL SAUCE",
+      "item_b": "DELIVERY CHARGE",
+      "count": 36
+    },
+    {
+      "item_a": "\"  NUTELLA SAUCE",
+      "item_b": "DELIVERY CHARGE",
+      "count": 36
+    },
+    {
+      "item_a": "\"  CARAMEL SAUCE",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 31
+    },
+    {
+      "item_a": "\"  CARAMEL SAUCE",
+      "item_b": "CHIMNEY THE ONE",
+      "count": 30
+    },
+    {
+      "item_a": "BROWNIES . (R)",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 28
+    },
+    {
+      "item_a": "CLASSIC CHIMNEY",
+      "item_b": "PRESSED",
+      "count": 27
+    },
+    {
+      "item_a": "\"  NUTELLA SAUCE",
+      "item_b": "BROWNIES . (R)",
+      "count": 27
+    },
+    {
+      "item_a": "\"  NUTELLA SAUCE",
+      "item_b": "CHIMNEY THE ONE",
+      "count": 27
+    },
+    {
+      "item_a": "\"  NUTELLA SAUCE",
+      "item_b": "\"  STRAWBERRY",
+      "count": 27
+    },
+    {
+      "item_a": "CLASSIC CHIMNEY",
+      "item_b": "DELIVERY CHARGE",
+      "count": 26
+    },
+    {
+      "item_a": "CLASSIC CHIMNEY",
+      "item_b": "NUTELLA SPREAD CHIMNEY.",
+      "count": 26
+    },
+    {
+      "item_a": "NUTELLA SPREAD CHIMNEY.",
+      "item_b": "PRESSED",
+      "count": 24
+    },
+    {
+      "item_a": "BROWNIES . (R)",
+      "item_b": "DELIVERY CHARGE",
+      "count": 24
+    },
+    {
+      "item_a": "DELIVERY CHARGE",
+      "item_b": "PRESSED",
+      "count": 23
+    },
+    {
+      "item_a": "BROWNIES . (R)",
+      "item_b": "CHIMNEY THE ONE",
+      "count": 21
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "NUTELLA SPREAD CONUT.",
+      "count": 20
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "BROWNIES . (R)",
+      "count": 20
+    },
+    {
+      "item_a": "\"  STRAWBERRY",
+      "item_b": "CONUT THE ONE",
+      "count": 19
+    },
+    {
+      "item_a": "DELIVERY CHARGE",
+      "item_b": "NUTELLA SPREAD CONUT.",
+      "count": 19
+    },
+    {
+      "item_a": "DELIVERY CHARGE",
+      "item_b": "ICE CREAM ON THE SIDE",
+      "count": 19
+    },
+    {
+      "item_a": "CONUT THE ONE",
+      "item_b": "DELIVERY CHARGE",
+      "count": 18
+    },
+    {
+      "item_a": "CONUT THE ONE",
+      "item_b": "NUTELLA SPREAD CONUT.",
+      "count": 18
+    }
+  ],
+  "top_combos": [
+    {
+      "combo": "DELIVERY CHARGE + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 56
+    },
+    {
+      "combo": "\"  STRAWBERRY + DELIVERY CHARGE",
+      "co_occurrence_count": 51
+    },
+    {
+      "combo": "\"  STRAWBERRY + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 46
+    },
+    {
+      "combo": "CHIMNEY THE ONE + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 44
+    },
+    {
+      "combo": "\"  STRAWBERRY + CHIMNEY THE ONE",
+      "co_occurrence_count": 44
+    },
+    {
+      "combo": "\"  CARAMEL SAUCE + \"  STRAWBERRY",
+      "co_occurrence_count": 41
+    },
+    {
+      "combo": "CHIMNEY THE ONE + DELIVERY CHARGE",
+      "co_occurrence_count": 39
+    },
+    {
+      "combo": "\"  NUTELLA SAUCE + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 38
+    },
+    {
+      "combo": "\"  CARAMEL SAUCE + DELIVERY CHARGE",
+      "co_occurrence_count": 36
+    },
+    {
+      "combo": "\"  NUTELLA SAUCE + DELIVERY CHARGE",
+      "co_occurrence_count": 36
+    },
+    {
+      "combo": "\"  CARAMEL SAUCE + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 31
+    },
+    {
+      "combo": "\"  CARAMEL SAUCE + CHIMNEY THE ONE",
+      "co_occurrence_count": 30
+    },
+    {
+      "combo": "BROWNIES . (R) + NUTELLA SPREAD CHIMNEY.",
+      "co_occurrence_count": 28
+    },
+    {
+      "combo": "CLASSIC CHIMNEY + PRESSED",
+      "co_occurrence_count": 27
+    },
+    {
+      "combo": "\"  NUTELLA SAUCE + BROWNIES . (R)",
+      "co_occurrence_count": 27
+    }
+  ],
+  "num_orders_analyzed": 121
+}

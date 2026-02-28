@@ -1,0 +1,117 @@
+{
+  "coffee": {
+    "top_products_by_qty": [
+      {
+        "description": "SINGLE ESPRESSO",
+        "qty": 381.0,
+        "total_amount": 90822160.95
+      },
+      {
+        "description": "DOUBLE ESPRESSO",
+        "qty": 285.0,
+        "total_amount": 93603241.81
+      },
+      {
+        "description": "CAFFE LATTE",
+        "qty": 282.0,
+        "total_amount": 117639728.15
+      },
+      {
+        "description": "CAPPUCCINO",
+        "qty": 178.0,
+        "total_amount": 74254863.88
+      },
+      {
+        "description": "CARAMEL FRAPPE",
+        "qty": 156.0,
+        "total_amount": 83670809.69
+      },
+      {
+        "description": "AMERICAN COFFEE",
+        "qty": 119.0,
+        "total_amount": 42550539.97
+      },
+      {
+        "description": "CAFE MOCHA",
+        "qty": 67.0,
+        "total_amount": 33983486.97
+      },
+      {
+        "description": "MOCHA FRAPPE",
+        "qty": 64.0,
+        "total_amount": 34326486.03
+      },
+      {
+        "description": "CARAMEL MOCHA FRAPPE",
+        "qty": 39.0,
+        "total_amount": 20917702.42
+      },
+      {
+        "description": "WHITE MOCHA",
+        "qty": 37.0,
+        "total_amount": 18767000.26
+      }
+    ]
+  },
+  "milkshake": {
+    "top_products_by_qty": [
+      {
+        "description": "OREO MILKSHAKE",
+        "qty": 134.0,
+        "total_amount": 95828108.81
+      },
+      {
+        "description": "VANILLA MILKSHAKE",
+        "qty": 110.0,
+        "total_amount": 58998647.86
+      },
+      {
+        "description": "STRAWBERRY MILKSHAKE",
+        "qty": 78.0,
+        "total_amount": 55780540.94
+      },
+      {
+        "description": "DOUBLE CHOCOLATE MILKSHAKE",
+        "qty": 36.0,
+        "total_amount": 27890270.44
+      },
+      {
+        "description": "SALTED CARAMEL MILKSHAKE",
+        "qty": 30.0,
+        "total_amount": 23241892.02
+      },
+      {
+        "description": "PISTACHIO MILKSHAKE",
+        "qty": 26.0,
+        "total_amount": 23241891.97
+      },
+      {
+        "description": "MATCHA MILKSHAKE",
+        "qty": 9.0,
+        "total_amount": 8045270.29
+      },
+      {
+        "description": "GRANOLA BERRIES MILKSHAKE",
+        "qty": 8.0,
+        "total_amount": 6197837.87
+      },
+      {
+        "description": "TOFFEE NUT MILKSHAKE",
+        "qty": 7.0,
+        "total_amount": 5423108.13
+      },
+      {
+        "description": "FRUIT LOOPS MILKSHAKE",
+        "qty": 6.0,
+        "total_amount": 4648378.39
+      }
+    ]
+  },
+  "growth_strategies": [
+    "Bundle coffee with popular pastries (use combo optimization pairs) to increase basket size.",
+    "Promote milkshakes during peak warm hours; run limited-time flavors to drive trials.",
+    "Highlight top-selling coffee items (e.g. CAFFE LATTE, DOUBLE ESPRESSO) on menu and delivery.",
+    "Cross-sell milkshakes with chimney/conut items where combos are strong.",
+    "Use scaled volume and revenue ratios to allocate inventory and marketing spend across branches."
+  ]
+}
