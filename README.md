@@ -114,5 +114,5 @@ Data is in **scaled units**; use for patterns, ratios, and relative comparison o
 
 - **Repository**: This repo with the structure above.  
 - **README**: This file (problem, approach, how to run, results).  
-- **Executive brief**: `docs/EXECUTIVE_BRIEF.md` (export to PDF for submission).  
-- **Demo**: Screenshots or short video of OpenClaw invoking the API (e.g. calling `/api/demand_forecast`, `/api/combo_recommendations`).
+- **Executive brief**: executive brief (pdf)  
+- **Demo**: Screenshots of OpenClaw invoking the API
