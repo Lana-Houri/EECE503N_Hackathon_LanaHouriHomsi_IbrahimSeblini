@@ -1,10 +1,3 @@
-# =============================================================================
-# [OBJECTIVE 3] EXPANSION FEASIBILITY
-# =============================================================================
-# Evaluate whether opening a new branch is feasible and recommend candidate
-# locations. Uses branch performance (monthly sales, tax, avg sales per customer)
-# to score feasibility and suggest criteria for new locations.
-# =============================================================================
 
 import os
 import json
@@ -57,7 +50,6 @@ def run_expansion_feasibility(
             else:
                 branch_metrics.append({"branch": br, "tax_total_scaled": round(float(row["tax_total"]), 2)})
 
-    # Feasibility: high-performing branches indicate brand strength; recommend similar demographics/traffic
     total_sales_all = sum(m.get("total_sales_scaled", 0) or 0 for m in branch_metrics)
     avg_per_branch = total_sales_all / len(branch_metrics) if branch_metrics else 0
 

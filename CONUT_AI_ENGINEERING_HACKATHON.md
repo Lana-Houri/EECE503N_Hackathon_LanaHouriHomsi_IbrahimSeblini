@@ -105,7 +105,7 @@ Demonstrable interaction between OpenClaw and your system.
 Code will be executed for validation, so broken or non-reproducible submissions will be penalized.
 
 ---
-
+x
 ## Team Format
 - Maximum 3 students per team.
 - Solo and duo submissions are allowed.

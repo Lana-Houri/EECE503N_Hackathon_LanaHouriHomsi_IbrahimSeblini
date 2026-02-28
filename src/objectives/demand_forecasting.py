@@ -1,10 +1,3 @@
-# =============================================================================
-# [OBJECTIVE 2] DEMAND FORECASTING BY BRANCH
-# =============================================================================
-# Forecast demand per branch to support inventory and supply chain decisions.
-# Uses cleaned monthly sales by branch. We use a simple approach: average
-# recent months + optional seasonal factor, stored as next-period forecast.
-# =============================================================================
 
 import os
 import json
@@ -35,17 +28,14 @@ def run_demand_forecasting(monthly_sales: pd.DataFrame = None):
             json.dump(out, f, indent=2)
         return out
 
-    # Aggregate total per branch per month (in case of duplicates)
     monthly_sales["total"] = pd.to_numeric(monthly_sales["total"], errors="coerce")
     branch_month = monthly_sales.groupby(["branch", "month", "year"])["total"].sum().reset_index()
 
-    # Simple forecast: average of last 3 months per branch, or overall average
     forecasts = []
     for branch in branch_month["branch"].unique():
         br_df = branch_month[branch_month["branch"] == branch].sort_values(["year", "month"])
         if br_df.empty:
             continue
-        # Use numeric month for ordering
         month_order = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6,
                        "July": 7, "August": 8, "September": 9, "October": 10, "November": 11, "December": 12}
         br_df = br_df.copy()

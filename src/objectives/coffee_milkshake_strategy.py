@@ -1,10 +1,3 @@
-# =============================================================================
-# [OBJECTIVE 5] COFFEE AND MILKSHAKE GROWTH STRATEGY
-# =============================================================================
-# Develop data-driven strategies to increase coffee and milkshake sales.
-# Uses sales by items/groups (coffee vs milkshake categories) and optionally
-# sales detail for cross-sell with combos.
-# =============================================================================
 
 import os
 import json
@@ -65,7 +58,6 @@ def run_coffee_milkshake_strategy(items_by_group: pd.DataFrame = None, sales_det
             elif _is_milkshake(d) and not any(x["description"] == d for x in milkshake_items):
                 milkshake_items.append({"description": d, "qty": row["qty"], "total_amount": row.get("price", 0) * row["qty"]})
 
-    # Aggregate by product
     from collections import defaultdict
     c_totals = defaultdict(lambda: {"qty": 0, "total_amount": 0})
     for x in coffee_items:
@@ -85,7 +77,6 @@ def run_coffee_milkshake_strategy(items_by_group: pd.DataFrame = None, sales_det
     strategies.append("Cross-sell milkshakes with chimney/conut items where combos are strong.")
     strategies.append("Use scaled volume and revenue ratios to allocate inventory and marketing spend across branches.")
 
-    # Ensure no NaN in JSON (JSON does not support NaN; use None -> null)
     def _sanitize(val):
         if val is None or (isinstance(val, float) and math.isnan(val)):
             return None

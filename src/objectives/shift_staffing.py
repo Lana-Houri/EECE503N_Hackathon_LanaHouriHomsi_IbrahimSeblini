@@ -1,10 +1,3 @@
-# =============================================================================
-# [OBJECTIVE 4] SHIFT STAFFING ESTIMATION
-# =============================================================================
-# Estimate required employees per shift using demand and time-related operational
-# data. Uses attendance (hours per branch) and monthly sales as demand proxy to
-# suggest staffing levels per branch.
-# =============================================================================
 
 import os
 import json
@@ -29,21 +22,18 @@ def run_shift_staffing(attendance: pd.DataFrame = None, monthly_sales: pd.DataFr
             return {"recommendations": [], "message": "No attendance data."}
 
     attendance["duration_hours"] = pd.to_numeric(attendance["duration_hours"], errors="coerce")
-    # Total hours per branch (in sample period)
     branch_hours = attendance.groupby("branch").agg({
         "duration_hours": "sum",
         "employee_id": "nunique",
     }).reset_index()
     branch_hours.columns = ["branch", "total_hours", "unique_employees"]
 
-    # Average hours per employee per branch -> infer shifts (e.g. 8h shift)
     branch_hours["avg_hours_per_employee"] = branch_hours["total_hours"] / branch_hours["unique_employees"].replace(0, np.nan)
     hours_per_shift = 8.0
     branch_hours["estimated_shifts_per_period"] = branch_hours["total_hours"] / hours_per_shift
     branch_hours["recommended_employees_per_shift"] = (
         branch_hours["unique_employees"] * branch_hours["avg_hours_per_employee"] / hours_per_shift
     ).round(1)
-    # At least 1, cap by observed employees
     branch_hours["recommended_employees_per_shift"] = branch_hours["recommended_employees_per_shift"].clip(lower=1)
 
     recommendations = []
