@@ -1,11 +1,3 @@
-# =============================================================================
-# DATA INGESTION & CLEANING - Conut Bakery Scaled Data
-# =============================================================================
-# Pipeline stage 1: Load report-style CSVs, strip headers/page markers,
-# normalize numeric columns. Saves cleaned tables to artifacts/ for downstream
-# feature engineering and modeling.
-# =============================================================================
-
 import os
 import re
 import csv
@@ -30,10 +22,7 @@ def _clean_numeric(val):
         return None
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 1 - COMBO OPTIMIZATION] + [OBJECTIVE 5 - COFFEE/MILKSHAKE]
-# Sales by customer in detail (line items) - used for product pairs and beverage analysis
-# -----------------------------------------------------------------------------
+
 def load_and_clean_sales_detail():
     """
     Load REP_S_00502.csv: line-item sales per customer.
@@ -80,9 +69,6 @@ def load_and_clean_sales_detail():
     return df
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 1 - COMBO] Customer orders summary (first/last order, total, order count)
-# -----------------------------------------------------------------------------
 def load_and_clean_customer_orders():
     """
     Load rep_s_00150.csv: Customer Name, First Order, Last Order, Total, No. of Orders.
@@ -126,10 +112,6 @@ def load_and_clean_customer_orders():
     return df
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 2 - DEMAND FORECASTING] + [OBJECTIVE 3 - EXPANSION]
-# Monthly sales by branch - time series for demand and branch performance
-# -----------------------------------------------------------------------------
 def load_and_clean_monthly_sales():
     """
     Load rep_s_00334_1_SMRY.csv: Branch Name, Month, Year, Total.
@@ -175,9 +157,6 @@ def load_and_clean_monthly_sales():
     return df
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 4 - SHIFT STAFFING] Time and attendance - punch in/out, duration per employee/branch
-# -----------------------------------------------------------------------------
 def load_and_clean_attendance():
     """
     Load REP_S_00461.csv: EMP ID, NAME, Branch, PUNCH IN date/time, PUNCH OUT, Work Duration.
@@ -247,9 +226,6 @@ def load_and_clean_attendance():
     return df
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 5 - COFFEE AND MILKSHAKE STRATEGY] Sales by items and groups
-# -----------------------------------------------------------------------------
 def load_and_clean_items_by_group():
     """
     Load rep_s_00191_SMRY.csv: Description, Qty, Total Amount by Division/Group.
@@ -299,9 +275,6 @@ def load_and_clean_items_by_group():
     return df
 
 
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 3 - EXPANSION] + general metrics - Average sales by menu (branch/channel)
-# -----------------------------------------------------------------------------
 def load_and_clean_avg_sales_menu():
     """Load rep_s_00435_SMRY.csv: Menu Name (branch/channel), # Cust, Sales, Avg Customer."""
     path = os.path.join(config.DATA_DIR, "rep_s_00435_SMRY.csv")
@@ -336,10 +309,6 @@ def load_and_clean_avg_sales_menu():
     df.to_csv(config.CLEANED_AVG_SALES_MENU_PATH, index=False)
     return df
 
-
-# -----------------------------------------------------------------------------
-# [OBJECTIVE 3 - EXPANSION] Tax summary by branch - proxy for branch size/revenue
-# -----------------------------------------------------------------------------
 def load_and_clean_tax_by_branch():
     """Load REP_S_00194_SMRY.csv: Branch Name, Tax Total. Format: 'Branch Name:  X' then 'Total By Branch,...,number'."""
     path = os.path.join(config.DATA_DIR, "REP_S_00194_SMRY.csv")
@@ -369,9 +338,6 @@ def load_and_clean_tax_by_branch():
     return df
 
 
-# -----------------------------------------------------------------------------
-# RUN ALL INGESTION - Called by run_pipeline.py
-# -----------------------------------------------------------------------------
 def run_ingestion():
     """Run all load_and_clean_* steps and save artifacts. Returns dict of dataframes."""
     os.makedirs(config.ARTIFACTS_DIR, exist_ok=True)

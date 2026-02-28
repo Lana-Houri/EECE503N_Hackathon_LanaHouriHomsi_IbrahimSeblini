@@ -102,7 +102,7 @@ def get_coffee_milkshake_strategy():
 
 # -----------------------------------------------------------------------------
 # OpenClaw tools descriptor (optional: OpenClaw can use this to discover tools)
-# POST /api/tools/list returns tool names and args for OpenClaw tool-invoke pattern
+# GET /api/tools/list returns tool names and args for OpenClaw tool-invoke pattern
 # -----------------------------------------------------------------------------
 @app.get("/api/tools/list", summary="List available tools for OpenClaw integration")
 def list_tools():

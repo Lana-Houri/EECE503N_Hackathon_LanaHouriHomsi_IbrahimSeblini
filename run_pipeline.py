@@ -1,20 +1,3 @@
-# =============================================================================
-# RUN FULL PIPELINE - Conut AI Chief of Operations Agent
-# =============================================================================
-# End-to-end: Data ingestion -> Cleaning -> Feature usage -> Modeling/Analytics
-# -> Artifacts (JSON/CSV) for inference and API. Run this before starting the API.
-#
-# Usage: python run_pipeline.py
-#
-# What runs (linked to business objectives):
-#   1. Ingestion: reads all Conut CSVs, cleans, saves to artifacts/
-#   2. [OBJECTIVE 1] Combo optimization -> artifacts/combo_recommendations.json
-#   3. [OBJECTIVE 2] Demand forecasting -> artifacts/demand_forecast.json
-#   4. [OBJECTIVE 3] Expansion feasibility -> artifacts/expansion_feasibility.json
-#   5. [OBJECTIVE 4] Shift staffing -> artifacts/staffing_recommendations.json
-#   6. [OBJECTIVE 5] Coffee/milkshake strategy -> artifacts/coffee_milkshake_strategy.json
-# =============================================================================
-
 import sys
 import os
 
