@@ -1,11 +1,11 @@
-# =============================================================================
+
 # QUICK SYSTEM TEST - Verifies pipeline and API work
-# =============================================================================
+
 # Run: python test_system.py
 # 1. Runs the full pipeline (ingestion + all 5 objectives)
 # 2. Starts the API in the background and calls each endpoint
 # 3. Prints pass/fail for each step
-# =============================================================================
+
 
 import os
 import sys
